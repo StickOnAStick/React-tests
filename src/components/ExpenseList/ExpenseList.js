@@ -1,10 +1,18 @@
 import React from "react";
 import ExpenseItem from "./ExpenseItem";
+import ExpenseListFilter from "./ExpenseListFilter";
 import Card from "../UI/Card";
 import './Expense.css';
 
 function ExpenseList (prop){
+
+    const filterYearHandler = (selectedYear) => {
+      console.log(selectedYear);
+    };
+
     return (
+      <div>
+        <ExpenseListFilter onFilterYear={filterYearHandler}/>
         <Card className="expenses" >
             <ExpenseItem 
                 title={prop.expenses[0].title}
@@ -27,6 +35,7 @@ function ExpenseList (prop){
               date={prop.expenses[3].date}
             />
         </Card>
+      </div>
     );
 
 }
