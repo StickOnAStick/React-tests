@@ -6,13 +6,13 @@ import './Expense.css';
 
 function ExpenseList (prop){
 
-    const filterYearHandler = (selectedYear) => {
+    const filterYear = (selectedYear) => {
       console.log(selectedYear);
     };
 
     return (
       <div>
-        <ExpenseListFilter onFilterYear={filterYearHandler}/>
+        <ExpenseListFilter onFilterYear={filterYear}/>
         <Card className="expenses" >
             <ExpenseItem 
                 title={prop.expenses[0].title}
